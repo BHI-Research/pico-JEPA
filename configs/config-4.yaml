@@ -1,0 +1,61 @@
+# config.yaml
+
+# processing device
+force_cpu: false # Set to True to force CPU usage, even if a GPU is
+
+# Video & Data Loading
+video_dir: "videos/train"
+csv_file: "train.csv" # For pre-training (JEPA)
+frames_per_clip: 8
+resize_height: 224
+resize_width: 224
+video_channels: 3
+
+# ViT Backbone
+vit_patch_size_t: 2
+vit_patch_size_h: 16
+vit_patch_size_w: 16
+vit_embed_dim: 192
+vit_depth: 8
+vit_num_heads: 8
+vit_mlp_ratio: 3.0
+vit_dropout: 0.1 # For pre-training (JEPA)
+
+# JEPA Specific
+predictor_depth: 2
+predictor_heads: 4
+mask_ratio: 0.75
+ema_decay: 0.996
+
+# Pre-training (JEPA)
+batch_size: 10
+learning_rate: 0.0002
+weight_decay: 0.05
+num_epochs: 4
+num_workers: 0
+encoder_save_path: "./pico_jepa_pretrained_encoder.pth"
+predictor_lr_multiplier: 2.0 #Multiplier for the predictor's learning rate (e.g., 2.0 * 1e-4 = 2e-4)
+warmup_epochs: 1 # Number of epochs for the warmup phase
+final_lr: 1.0e-6 # Minimum learning rate at the end of training (after Cosine Annealing)
+clip_grad_norm: 1.0
+
+# Classification Training Specific
+csv_file_labeled: "model-4.csv" # For classification
+num_classes: 4
+vit_dropout_classify: 0.0 # Dropout for ViT encoder during classification fine-tuning/evaluation
+freeze_encoder: True
+classifier_save_path: "./pico_jepa_classifier4.pth"
+num_epochs_classify: 4
+batch_size_classify: 16
+learning_rate_classifier: 1.0e-4 # Learning rate for the head classifier
+learning_rate_encoder_finetune: 1.0e-5 #Learning rate for encoder fine-tuning (if not frozen)
+classify_weight_decay: 0.05 # Weight loss for classification
+warmup_epochs_classify: 2 # Number of warmup epochs for classification
+final_lr_classify: 1.0e-7 # Minimum learning rate at the end of the Cosine Annealing cycle
+clip_grad_norm_classify: 1.0 # Threshold for gradient clipping in classification. Set to null/None to disable.
+
+# Feature Visualization Specific
+num_videos_for_viz: 20
+max_patches_for_viz: 2000
+pca_components: 50
+tsne_perplexity: 30.0
