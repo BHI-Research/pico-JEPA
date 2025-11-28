@@ -6,6 +6,10 @@ This project implements a minimal version of a Joint-Embedding Predictive Archit
 
 This work is part of a publication. If you use this code, please cite our paper:
 
+- **Paper: (Spanish)** [PDF](publications/pico-JEPA_paper.pdf)
+- **Presentation (English):** [PDF](publications/pico-JEPA_presentation_en.pdf)
+- **Presentation (Spanish):** [PDF](publications/pico-JEPA_presentation_es.pdf)
+
 ```bash
 @inproceedings{rostagno2025pico,
   title = {pico-JEPA: Comprendiendo el Video con Modelos Ultra-Ligeros y la Sabiduría Colectiva},
@@ -158,7 +162,7 @@ Infer on Tiny Models.
 sh infers_part.sh
 ```
 
-### Stage 5: Ensemble Votingg for Enhanced Accuracy
+### Stage 5: Ensemble Voting for Enhanced Accuracy
 
 To improve classification accuracy, an ensemble method is used. The predictions from the four specialized 'tiny' models are combined through a voting process. This approach can often lead to more robust and accurate results than a single model can provide.
 
