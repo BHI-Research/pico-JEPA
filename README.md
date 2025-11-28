@@ -6,9 +6,9 @@ This project implements a minimal version of a Joint-Embedding Predictive Archit
 
 This work is part of a publication. If you use this code, please cite our paper:
 
-- **Paper: (Spanish)** [PDF](publications/pico-JEPA_paper.pdf)
-- **Presentation (English):** [PDF](publications/pico-JEPA_presentation_en.pdf)
-- **Presentation (Spanish):** [PDF](publications/pico-JEPA_presentation_es.pdf)
+- **Paper: (Spanish)** [PDF](publications/pico-JEPA-paper-ES.pdf)
+- **Presentation (English):** [PDF](publications/pico-JEPA-presentation-EN.pdf)
+- **Presentation (Spanish):** [PDF](publications/pico-JEPA-presentation-ES.pdf)
 
 ```bash
 @inproceedings{rostagno2025pico,
